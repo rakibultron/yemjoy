@@ -1,0 +1,26 @@
+{
+  "name": "yemjoy",
+  "version": "1.0.0",
+  "description": "A standard-secured, violence-free social media platform fostering meaningful connections and positive interactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakibul-dev/yemjoy.git"
+  },
+  "keywords": [
+    "nodejs",
+    "rabbitmq",
+    "kubernetes",
+    "kafka",
+    "microservice"
+  ],
+  "author": "https://github.com/rakibul-dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakibul-dev/yemjoy/issues"
+  },
+  "homepage": "https://github.com/rakibul-dev/yemjoy#readme"
+}
