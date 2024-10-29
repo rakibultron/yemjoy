@@ -31,15 +31,22 @@ app.post("/posts", async (req, res) => {
       content: newPost.content,
       createdAt: newPost.createdAt,
     };
+    axios.post("http://event-bus-clusterip-service:6000/events", {
+      event,
+    });
     res.status(200).json(newPost);
-    await axios.post("http://localhost:6000/events", { event });
   } catch (error) {
     res.json({ error });
   }
 });
 
 app.get("/posts", async (req, res) => {
-  res.json(posts);
+  try {
+    res.json({ posts });
+  } catch (error) {
+    console.log(error);
+    res.json({ error });
+  }
 });
 
 app.post("/events", async (req, res) => {
