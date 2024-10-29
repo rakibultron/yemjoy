@@ -12,9 +12,9 @@ app.post("/events", async (req, res) => {
 
     console.log("Received event:", event);
 
-    axios.post("http://localhost:3000/events", { event });
-    axios.post("http://localhost:4000/events", { event });
-    axios.post("http://localhost:5001/events", { event });
+    axios.post("http://posts-clusterip-service:3000/events", { event });
+    axios.post("http://comments-clusterip-service:4000/events", { event });
+    axios.post("http://query-clusterip-service:5000/events", { event });
 
     res.json({ ok: "ok" });
   } catch (error) {

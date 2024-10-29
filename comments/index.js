@@ -5,12 +5,10 @@ const app = express();
 
 const PORT = 4000;
 
-
 app.use(express.json());
 
 // In-memory data store
 let comments = [];
-
 
 app.post("/comments/:postId", async (req, res) => {
   const { postId } = req.params;
@@ -36,10 +34,9 @@ app.post("/comments/:postId", async (req, res) => {
     content: newComment.content,
     createdAt: newComment.createdAt,
   };
-  axios.post("http://localhost:6000/events", { event });
+  axios.post("http://event-bus-clusterip-service:6000/events", { event });
   res.status(201).json(newComment);
 });
-
 
 app.get("/comments/:postId", async (req, res) => {
   const { postId } = req.params;
